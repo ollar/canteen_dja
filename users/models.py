@@ -10,3 +10,9 @@ class User(models.Model):
     timestamp_modified = models.DateTimeField(auto_now=True)
 
     # orders = relationship('Order', backref='user')
+
+    def __str__(self):
+        return '{} ({})'.format(self.real_name, self.username)
+
+    timestamp_created.admin_order_field = 'timestamp_created'
+    timestamp_created.short_description = 'created'
